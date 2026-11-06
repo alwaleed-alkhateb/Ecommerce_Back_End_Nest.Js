@@ -54,7 +54,7 @@ export class AuthService {
   async signIn(@Body() signInDto: SignInDto) {
     const user = await this.user.findOne({ email: signInDto.email });
     if (!user) {
-      throw new NotFoundException();
+      throw new NotFoundException('User not found');
     }
     const isMatch = await bcrypt.compare(signInDto.password, user.password);
     if (!isMatch) {
