@@ -5,6 +5,9 @@ import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { CategoryModule } from './category/category.module';
+import { SubCategoryModule } from './sub-category/sub-category.module';
+import { BrandModule } from './brand/brand.module';
+import { CouponModule } from './coupon/coupon.module';
 
 @Module({
   imports: [
@@ -22,6 +25,9 @@ import { CategoryModule } from './category/category.module';
       },
     }),
     CategoryModule,
+    SubCategoryModule,
+    BrandModule,
+    CouponModule,
   ],
   controllers: [],
   providers: [],
